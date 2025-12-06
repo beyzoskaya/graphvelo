@@ -100,7 +100,8 @@ GraphVelo includes a **Generative Autoencoder** mode. It combines the cell state
 
 $$ P(\text{Gene}_{expression} \mid \text{Cell}_{state}, \text{Velocity}) $$
 
-![Genes](assets/visual_8_gene_metrics.png)
+!<img width="1800" height="750" alt="visual_8_gene_metrics" src="https://github.com/user-attachments/assets/083fe7ea-a6a1-453e-8ae9-94474ac65963" />
+
 *> Top 10 genes best reconstructed by the Generative Model.*
 
 ---
