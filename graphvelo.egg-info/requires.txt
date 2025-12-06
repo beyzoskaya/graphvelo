@@ -1,0 +1,9 @@
+scanpy
+scvelo
+torch
+torch-geometric
+matplotlib
+seaborn
+scipy
+numpy
+pandas

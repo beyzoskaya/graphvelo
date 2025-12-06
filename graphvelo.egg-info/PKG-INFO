@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: graphvelo
+Version: 0.1.0
+Summary: Geometric Deep Learning for RNA Velocity Denoising & Simulation
+Author: Beyza Kaya
+Requires-Python: >=3.8
+Requires-Dist: scanpy
+Requires-Dist: scvelo
+Requires-Dist: torch
+Requires-Dist: torch-geometric
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scipy
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
