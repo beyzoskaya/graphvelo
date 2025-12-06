@@ -22,13 +22,14 @@ GraphVelo reconstructs a smooth, continuous vector field from noisy RNA velocity
 
 ### 2. Generative Simulation (ODE Solver)
 Using the learned manifold, we perform time-forward simulations to predict the future fate of stem cells.
-![Simulation]<img width="2000" height="1600" alt="visual_4_simulation_dentate" src="https://github.com/user-attachments/assets/dbf910c1-47c9-428d-aa6d-be8193efb621" />
+!<img width="2000" height="1600" alt="visual_4_simulation_dentate" src="https://github.com/user-attachments/assets/dbf910c1-47c9-428d-aa6d-be8193efb621" />
 
 *> **In-Silico Lineage Tracing:** Starting from Radial Glia stem cells (Green), the model correctly predicts the bifurcation into Astrocytes vs. Granule Cells (Red).*
 
 ### 3. Unsupervised Driver Discovery
 The attention mechanism automatically highlights cells that drive the system dynamics.
-![Attention](compare_5_gat_attention.png)
+!<img width="2000" height="1600" alt="compare_5_gat_attention" src="https://github.com/user-attachments/assets/c10e7ba8-a48c-4123-8b67-1a85e4d858af" />
+
 *> **Influence Map:** Bright spots indicate "Driver Cells" (high incoming attention). The model spontaneously identified the Stem Cell niche without supervision.*
 
 ---
