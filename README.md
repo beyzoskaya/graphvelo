@@ -15,14 +15,15 @@ It treats single-cell differentiation as a flow on a graph manifold, utilizing *
 
 ### 1. Vector Field Denoising & Regularization
 GraphVelo reconstructs a smooth, continuous vector field from noisy RNA velocity counts.
-![Streamlines]<img width="4800" height="1200" alt="compare_3_streamlines" src="https://github.com/user-attachments/assets/79990acc-dc58-4f6f-91f9-f51247f45f61" />
+<img width="4800" height="1200" alt="compare_3_streamlines" src="https://github.com/user-attachments/assets/79990acc-dc58-4f6f-91f9-f51247f45f61" />
 
 *> **Left:** Raw scVelo (Noisy)![Uploading compare_3_streamlines.png…]()
 . **Center:** GCN Smoothed. **Right:** GraphVelo (GAT) - Note the sharp decision boundaries at the branching point.*
 
 ### 2. Generative Simulation (ODE Solver)
 Using the learned manifold, we perform time-forward simulations to predict the future fate of stem cells.
-![Simulation](visual_4_simulation.png)
+![Simulation]<img width="2000" height="1600" alt="visual_4_simulation_dentate" src="https://github.com/user-attachments/assets/dbf910c1-47c9-428d-aa6d-be8193efb621" />
+
 *> **In-Silico Lineage Tracing:** Starting from Radial Glia stem cells (Green), the model correctly predicts the bifurcation into Astrocytes vs. Granule Cells (Red).*
 
 ### 3. Unsupervised Driver Discovery
