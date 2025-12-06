@@ -86,6 +86,7 @@ gv.plot_attention_map(adata, att_weights, att_edge)
 
 # 5. Run Generative Simulation
 gv.run_simulation(model, data, adata)
+```
 
 ## 🔬 Scientific Methodology
 
@@ -121,3 +122,4 @@ GraphVelo/
 │
 ├── tests/                  # Unit Tests
 └── setup.py                # Package Installation
+```
