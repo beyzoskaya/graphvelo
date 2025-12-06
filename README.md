@@ -40,8 +40,8 @@ GraphVelo is designed as a modular Python package.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/GraphVelo.git
-    cd GraphVelo
+    git clone https://github.com/beyzoskaya/graphvelo.git
+    cd graphvelo
     ```
 
 2.  **Create the environment (Recommended):**
