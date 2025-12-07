@@ -46,7 +46,7 @@ GraphVelo is designed as a modular Python package.
 
 2.  **Create the environment (Recommended):**
     ```bash
-    conda env create -f environment_mac.yml
+    conda env create -f environment.yml
     conda activate scvelo-gnn
     ```
 
