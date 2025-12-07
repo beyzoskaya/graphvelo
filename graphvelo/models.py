@@ -87,3 +87,49 @@ class GenerativeVelocityGNN(nn.Module):
         h = self.bn2(h)
         h = F.elu(h)
         return self.decoder(h)
+
+class HybridVelocityGAT(nn.Module):
+    def __init__(self, input_dim_pca, input_dim_bio, hidden_dim, output_dim, heads=4):
+        super(HybridVelocityGAT, self).__init__()
+        
+        # 1. Biological Feature Encoder (MLP)
+        # process the bio-features separately first
+        self.bio_encoder = nn.Sequential(
+            nn.Linear(input_dim_bio, 16),
+            nn.BatchNorm1d(16),
+            nn.ELU(),
+            nn.Linear(16, 16),
+            nn.ELU()
+        )
+        
+        # 2. Main GAT
+        # Input = PCA (30) + Encoded Bio (16) instead of PCA + Bio (original dim) in VelocityGAT
+        total_input = input_dim_pca + 16
+        
+        self.conv1 = GATv2Conv(total_input, hidden_dim, heads=heads, concat=True)
+        self.bn1 = nn.BatchNorm1d(hidden_dim * heads)
+        
+        self.conv2 = GATv2Conv(hidden_dim * heads, hidden_dim, heads=1, concat=False)
+        self.bn2 = nn.BatchNorm1d(hidden_dim)
+        
+        self.predictor = nn.Linear(hidden_dim, output_dim)
+
+    def forward(self, x_pca, x_bio, edge_index):
+        # A. Encode Bio Features
+        h_bio = self.bio_encoder(x_bio)
+        
+        # B. Concatenate (Fusion)
+        x_combined = torch.cat([x_pca, h_bio], dim=1)
+        
+        # C. Graph Attention
+        h = self.conv1(x_combined, edge_index)
+        h = self.bn1(h)
+        h = F.elu(h)
+        h = F.dropout(h, p=0.3, training=self.training)
+        
+        h = self.conv2(h, edge_index)
+        h = self.bn2(h)
+        h = F.elu(h)
+        h = F.dropout(h, p=0.3, training=self.training)
+        
+        return self.predictor(h)
