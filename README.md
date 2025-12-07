@@ -133,5 +133,3 @@ We benchmarked three architectures across different tissue topologies.
 | :--- | :--- | :---: | :---: | :---: |
 | **Pancreas** | Linear / Curved | 0.870 | 0.896 | **0.895** |
 | **Dentate Gyrus** | Bifurcation / Branching | 0.863 | 0.893 | **0.900** 🚀 |
-
-*> **Key Finding:** The Hybrid model excels in complex branching systems (Dentate) where biological context features (Entropy/Confidence) help resolve decision boundaries.*
