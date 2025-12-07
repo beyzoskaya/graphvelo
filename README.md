@@ -110,7 +110,7 @@ $$ P(\text{Gene}_{expression} \mid \text{Cell}_{state}, \text{Velocity}) $$
 ```text
 GraphVelo/
 ├── graphvelo/              # Core Library
-│   ├── models.py           # PyTorch Geometric Architectures (GAT/GCN)
+│   ├── models.py           # PyTorch Geometric Architectures (GAT/GCN/Hybrid)
 │   ├── engine.py           # Training & Inference Engine
 │   ├── dynamics.py         # ODE Solver for Simulations
 │   ├── data.py             # scVelo Integration Pipeline
